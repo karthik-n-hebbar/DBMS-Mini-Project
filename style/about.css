@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.logo img{
+    width: 350px;
+    height: 275px;
+}
+body {
+    display:flexbox;
+    justify-content: center;
+    align-items:center;
+    background-image: url(/media/home-background.jpg);
+}
+
+.container {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin-left: 250px;
+}
+
+.container h1 {
+    margin-left: 20px;
+    color: aqua;
+}
+.content {
+    background: rgba(231, 231, 236, 0.803);
+    margin: 20px;
+    padding: 50px;
+    align-items: center;
+    width: 60vw;
+    border-radius: 15px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.content p {
+    padding: 7px 0;
+}
+
