@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #55ffe5;
+    font-size: 15px;
+    align-items: center;
+    justify-content: center;
+    padding: auto;
+}
+
+.container {
+    width: 60vw;
+    margin: 150px auto;
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.container h1 {
+    font-family: 'Rowdies', cursive;
+}
+
+.container p{
+    font-family: 'Arimo', sans-serif;
+}
+
+.contact {
+    background: rgba(35, 35, 149, 0.442);
+    margin: 10px;
+    padding: 10px;
+    border-radius: 25px;
+}
+.contact h3{
+    font-family: 'Arimo', sans-serif;
+}
+
+tr td:first-child {
+    padding-right: 20px;
+}
+
+tr td{
+    padding-top: 20px;
+}
