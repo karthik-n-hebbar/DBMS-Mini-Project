@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,8 +8,30 @@
     <link rel="stylesheet" href="/style/login.css">
     <title>login</title>
     <link rel="icon" href="/media/favicon.ico" type="image/favicon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald:wght@200&family=Roboto:wght@100&family=Ubuntu:wght@300&display=swap');
+    </style>
 </head>
+
 <body>
-    
+    <div class="banner">
+        <div class="login">
+            <h1>Login</h1>
+            <form action="#" method="post">
+                <div class="text_field">
+                    <input type="text" name="userid" required>
+                    <span></span>
+                    <label for="text_field">User ID</label>
+                </div>
+                <div class="text_field">
+                    <input type="password" name="password" required>
+                    <span></span>
+                    <label for="text_field">Password</label>
+                </div>
+                <button type="submit">LOGIN</button>
+            </form>
+        </div>
+    </div>
 </body>
+
 </html>
