@@ -5,6 +5,7 @@
 
 header img {
     width: 240px;
+    margin-left: 100px;
 }
 
 body {
@@ -14,7 +15,8 @@ body {
 
 .main {
     width: 500px;
-    margin: -150px auto 0px auto;
+    height: 80vh;
+    margin: -170px auto 0px auto;
 }
 
 h2 {
@@ -53,7 +55,7 @@ label {
 
 input#submit {
     width: 200px;
-    margin: 5px 0 -10px 100px;
+    margin: 5px 0 0 100px;
     padding: 5px;
     border-radius: 15px;
     font-size: 15px;
