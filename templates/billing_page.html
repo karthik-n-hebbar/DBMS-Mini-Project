@@ -37,11 +37,11 @@
                 <br><br>
                 <label for="">Date: </label>
                 <br>
-                <input type="date" name="date" id="date" class="io2">
+                <input type="text" name="date" id="datePicker" class="io2">
                 <br><br>
                 <label for="">Time: </label>
                 <br>
-                <input type="time" name="time" id="time" class="io2">
+                <input type="text" name="time" id="timePicker" class="io2">
                 <br><br>
                 <label for="">Entry Point: </label>
                 <br>
@@ -60,4 +60,20 @@
         </div>
     </div>
 </body>
+<script>
+    var date = new Date();
+    var year = date.getFullYear();
+    var month = String(date.getMonth()+1).padStart(2, '0');
+    var todayDate = String(date.getDate()).padStart(2, '0');
+    var datePattern = todayDate + '-' + month +'-' + year;
+    document.getElementById("datePicker").value = datePattern;
+    // document.write(datePattern);
+
+    var hour = date.getHours();
+    var minutes = date.getMinutes();
+    var seconds = date.getSeconds();
+    var timePattern = hour +' : '+ minutes +' : '+ seconds;
+    document.getElementById("timePicker").value = timePattern;
+    document.write(timePattern);
+</script>
 </html>
