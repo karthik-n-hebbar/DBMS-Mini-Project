@@ -69,9 +69,9 @@
     document.getElementById("datePicker").value = datePattern;
     // document.write(datePattern);
 
-    var hour = date.getHours();
-    var minutes = date.getMinutes();
-    var seconds = date.getSeconds();
+    var hour = String(date.getHours()).padStart(2, '0');
+    var minutes = String(date.getMinutes()).padStart(2, '0');
+    var seconds = String(date.getSeconds()).padStart(2, '0');
     var timePattern = hour +' : '+ minutes +' : '+ seconds;
     document.getElementById("timePicker").value = timePattern;
     // document.write(timePattern);

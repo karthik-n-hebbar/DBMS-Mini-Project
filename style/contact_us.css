@@ -4,17 +4,19 @@
 }
 
 body {
-    background: #55ffe5;
+    background-image: linear-gradient(rgba(0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(/media/contact_us_bg.jpg);
     font-size: 15px;
     align-items: center;
     justify-content: center;
     padding: auto;
+    background-size: cover;
+    background-position: center;
 }
 
 .container {
     width: 60vw;
     margin: 150px auto;
-    background: white;
+    background: rgba(255, 255, 255, 0.414);
     border-radius: 10px;
     padding: 30px;
 }
