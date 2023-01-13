@@ -53,7 +53,7 @@ label {
     box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.3);
 }
 
-input#submit {
+#submit {
     width: 200px;
     margin: 5px 0 0 100px;
     padding: 5px;
@@ -75,4 +75,10 @@ input#submit:hover {
 .io2 {
     height: 30px;
     border-radius: 5px;
+} 
+
+.io3 {
+    height: 30px;
+    border-radius: 5px;
+    width: 100px;
 }

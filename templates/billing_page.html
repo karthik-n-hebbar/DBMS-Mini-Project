@@ -7,6 +7,7 @@
     <title>Billing</title>
     <link rel="icon" href="/media/favicon.ico" type="image/favicon">
     <link rel="stylesheet" href="/style/billing_page.css">
+    <link rel="javascript" href="/javascript/billing_page.js">
 </head>
 <body>
     <header>
@@ -18,11 +19,11 @@
             <form action="" method="post" id="billing">
                 <label for="">Serial No: </label>
                 <br>
-                <input type="text" name="serial_no" id="sno" placeholder="Enter the Serial No" class="io1">
+                <input type="text" name="serial_no" id="sno" placeholder="Enter the Serial No" class="io1" required>
                 <br><br>
                 <label for="">Vehicle Type: </label>
                 <br>
-                <select name="vehicle_type" id="" class="io2" >
+                <select name="vehicle_type" id="" class="io2" required >
                     <option value="vehicle_type">Select Vehicle Type</option>
                     <option value="Motorcycles">Motorcycles</option>
                     <option value="LMV">LMV</option>
@@ -31,7 +32,7 @@
                 <br><br>
                 <label for="">Vehicle Number: </label>
                 <br>
-                <input type="text" name="Vehicle_no" id="Vehicle_no" placeholder="Enter the Vehicle No" class="io1">
+                <input type="text" name="Vehicle_no" id="Vehicle_no" placeholder="Enter the Vehicle No" class="io1" required>
                 <br><br>
                 <label for="">Date: </label>
                 <br>
@@ -43,7 +44,7 @@
                 <br><br>
                 <label for="">Entry Point: </label>
                 <br>
-                <select name="enrty_point" id="" class="io2" >
+                <select name="enrty_point" id="" class="io2">
                     <option value="enrty_point">Select Entry Point</option>
                     <option value="Bannerghatta Road">Bannerghatta Road</option>
                     <option value="Kanakpura Road">Kanakpura Road</option>
@@ -52,7 +53,7 @@
                 <br><br>
                 <label for="">Exit Point: </label>
                 <br>
-                <select name="exit_point" id="" class="io2" >
+                <select name="exit_point" id="" class="io2">
                     <option value="exit_point">Select Exit Point</option>
                     <option value="Bannerghatta Road">Bannerghatta Road</option>
                     <option value="Kanakpura Road">Kanakpura Road</option>
@@ -61,27 +62,29 @@
                 <br><br>
                 <label for="">Amount: </label>
                 <br>
-                <input type="number" name="amount" id="amount" class="io1">
+                <input type="number" name="amount" id="amount" class="io3">
                 <br><br>
-                <input type="submit" value="SUBMIT" name="submit" id="submit">
+                <input type="submit" value="SUBMIT" id="submit">
             </form>
         </div>
     </div>
 </body>
 <script>
-    var date = new Date();
-    var year = date.getFullYear();
-    var month = String(date.getMonth()+1).padStart(2, '0');
-    var todayDate = String(date.getDate()).padStart(2, '0');
-    var datePattern = todayDate + '-' + month +'-' + year;
-    document.getElementById("datePicker").value = datePattern;
-    // document.write(datePattern);
+    
+var date = new Date();
+var year = date.getFullYear();
+var month = String(date.getMonth() + 1).padStart(2, '0');
+var todayDate = String(date.getDate()).padStart(2, '0');
+var datePattern = todayDate + '-' + month + '-' + year;
+document.getElementById("datePicker").value = datePattern;
+// document.write(datePattern);
 
-    var hour = String(date.getHours()).padStart(2, '0');
-    var minutes = String(date.getMinutes()).padStart(2, '0');
-    var seconds = String(date.getSeconds()).padStart(2, '0');
-    var timePattern = hour +' : '+ minutes +' : '+ seconds;
-    document.getElementById("timePicker").value = timePattern;
-    // document.write(timePattern);
+var hour = String(date.getHours()).padStart(2, '0');
+var minutes = String(date.getMinutes()).padStart(2, '0');
+var seconds = String(date.getSeconds()).padStart(2, '0');
+var timePattern = hour + ' : ' + minutes + ' : ' + seconds;
+document.getElementById("timePicker").value = timePattern;
+// document.write(timePattern);
+
 </script>
 </html>
