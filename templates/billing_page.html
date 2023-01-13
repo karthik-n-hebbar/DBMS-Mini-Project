@@ -23,7 +23,7 @@
                 <br><br>
                 <label for="">Vehicle Type: </label>
                 <br>
-                <select name="vehicle_type" id="" class="io2" required >
+                <select name="vehicle_type" id="vehicle_type" class="io2" required >
                     <option value="vehicle_type">Select Vehicle Type</option>
                     <option value="Motorcycles">Motorcycles</option>
                     <option value="LMV">LMV</option>
@@ -32,7 +32,7 @@
                 <br><br>
                 <label for="">Vehicle Number: </label>
                 <br>
-                <input type="text" name="Vehicle_no" id="Vehicle_no" placeholder="Enter the Vehicle No" class="io1" required>
+                <input type="text" name="vehicle_no" id="vehicle_no" placeholder="Enter the Vehicle No" class="io1" required>
                 <br><br>
                 <label for="">Date: </label>
                 <br>
@@ -44,8 +44,8 @@
                 <br><br>
                 <label for="">Entry Point: </label>
                 <br>
-                <select name="entry_point" id="" class="io2">
-                    <option value="enrty_point">Select Entry Point</option>
+                <select name="entry_point" id="entry_point" class="io2">
+                    <option value="entry_point">Select Entry Point</option>
                     <option value="Bannerghatta Road">Bannerghatta Road</option>
                     <option value="Kanakpura Road">Kanakpura Road</option>
                     <option value="Mysore Road">Mysore Road</option>
@@ -53,7 +53,7 @@
                 <br><br>
                 <label for="">Exit Point: </label>
                 <br>
-                <select name="exit_point" id="" class="io2">
+                <select name="exit_point" id="exit_point" class="io2">
                     <option value="exit_point">Select Exit Point</option>
                     <option value="Bannerghatta Road">Bannerghatta Road</option>
                     <option value="Kanakpura Road">Kanakpura Road</option>
@@ -82,9 +82,29 @@ document.getElementById("datePicker").value = datePattern;
 var hour = String(date.getHours()).padStart(2, '0');
 var minutes = String(date.getMinutes()).padStart(2, '0');
 var seconds = String(date.getSeconds()).padStart(2, '0');
-var timePattern = hour + ' : ' + minutes + ' : ' + seconds;
+var timePattern = hour + ':' + minutes + ':' + seconds;
 document.getElementById("timePicker").value = timePattern;
 // document.write(timePattern);
 
+var form = document.getElementById('billing');
+form.addEventListener('submit', function(event){
+    event.preventDefault()
+    var sno = document.getElementById('sno').value 
+    console.log(sno)
+    var vehicle_type = document.getElementById('vehicle_type').value 
+    console.log(vehicle_type)
+    var vehicle_no = document.getElementById('vehicle_no').value 
+    console.log(vehicle_no)
+    var datePicker = document.getElementById('datePicker').value 
+    console.log(datePicker)
+    var timePicker = document.getElementById('timePicker').value 
+    console.log(timePicker)
+    var entry_point = document.getElementById('entry_point').value 
+    console.log(entry_point)
+    var exit_point = document.getElementById('exit_point').value 
+    console.log(exit_point)
+    var amount = document.getElementById('amount').value 
+    console.log(amount)
+})
 </script>
 </html>
