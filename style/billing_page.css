@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header img {
+    width: 240px;
+}
+
+body {
+    background: url("/media/billing_page_bg.jpg");
+   color: white; 
+}
+
+.main {
+    width: 500px;
+    margin: -150px auto 0px auto;
+}
+
+h2 {
+    text-align: center;
+    padding: 20px;
+    font-family: sans-serif;
+}
+
+.billing {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    font-size: 18px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+}
+
+form#billing {
+    margin: 40px;
+}
+
+label {
+    font-size: 18px;
+}
+
+.io1 {
+    width: 300px;
+    height: 7.5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: 0;
+    padding: 7px;
+    background-color: #fff;
+    box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+input#submit {
+    width: 200px;
+    padding: 5px;
+    border-radius: 15px;
+    font-size: 15px;
+    font-weight: 600;
+    background-color: rgba(202, 202, 217, 0.81);
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 1px 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+input#submit:hover {
+    background-color: white;
+    border-color: #e3e6e8;
+    transition: 0.25s;
+}
