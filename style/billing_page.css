@@ -69,3 +69,8 @@ input#submit:hover {
     border-color: #e3e6e8;
     transition: 0.25s;
 }
+
+.io2 {
+    height: 25px;
+    border-radius: 5px;
+}
