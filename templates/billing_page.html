@@ -23,7 +23,7 @@
                 <br><br>
                 <label for="">Vehicle Type: </label>
                 <br>
-                <select name="Vehicle_type" id="Vehicle_type" class="io2" required >
+                <select name="vehicle_type" id="vehicle_type" class="io2" required >
                     <option value="Vehicle_type">Select Vehicle Type</option>
                     <option value="Motorcycles">Motorcycles</option>
                     <option value="LMV">LMV</option>
@@ -32,7 +32,7 @@
                 <br><br>
                 <label for="">Vehicle Number: </label>
                 <br>
-                <input type="text" name="Vehicle_no" id="Vehicle_no" placeholder="Enter the Vehicle No" class="io1" required>
+                <input type="text" name="vehicle_no" id="vehicle_no" placeholder="Enter the Vehicle No" class="io1" required>
                 <br><br>
                 <label for="">Date: </label>
                 <br>
@@ -95,10 +95,10 @@ form.addEventListener('submit', function(event){
     console.log(vehicle_type)
     var vehicle_no = document.getElementById('vehicle_no').value 
     console.log(vehicle_no)
-    var datePicker = document.getElementById('datePicker').value 
-    console.log(datePicker)
-    var timePicker = document.getElementById('timePicker').value 
-    console.log(timePicker)
+    var date = document.getElementById('date').value 
+    console.log(date)
+    var time = document.getElementById('time').value 
+    console.log(time)
     var entry_point = document.getElementById('entry_point').value 
     console.log(entry_point)
     var exit_point = document.getElementById('exit_point').value 
