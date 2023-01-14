@@ -54,9 +54,17 @@ label {
     box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.3);
 }
 
-#submit {
-    width: 200px;
-    margin: 5px 0 0 100px;
+.buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#submit{
+    width: 150px;
+    /* margin: 5px 0 0 100px; */
+    margin: 0 10px;
     padding: 5px;
     border-radius: 15px;
     font-size: 15px;
@@ -69,8 +77,10 @@ label {
 
 #amt_confirm {
     width: 100px;
-    height: 30px;
+    height: 25px;
     font-size: 9px;
+    border-radius: 25px;
+    box-shadow: 1px 1px 1px 5px rgba(0, 0, 0, 0.3);
 }
 
 input#submit:hover {
@@ -78,6 +88,11 @@ input#submit:hover {
     border-color: #e3e6e8;
     transition: 0.25s;
 }
+/* input#reset:hover {
+    background-color: white;
+    border-color: #e3e6e8;
+    transition: 0.25s;
+} */
 
 .io2 {
     height: 30px;
