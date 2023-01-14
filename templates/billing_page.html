@@ -65,8 +65,9 @@
                 <label for="">Amount: </label>
                 <br>
                 <input type="number" name="amount" id="amount" class="io3">
+                <input type="checkbox" name="amt_confirm" id="amt_confirm" onclick="ischecked()">
                 <br><br>
-                <input type="submit" value="SUBMIT" id="submit">
+                <input type="submit" value="SUBMIT" id="submit" disabled>
             </form>
         </div>
     </div>
@@ -87,26 +88,20 @@
     document.getElementById("time").value = timePattern;
     // document.write(timePattern);
 
-    var form = document.getElementById('billing');
-    form.addEventListener('submit', function (event) {
-        event.preventDefault()
-        var sno = document.getElementById('sno').value
-        console.log(sno)
-        var vehicle_type = document.getElementById('vehicle_type').value
-        console.log(vehicle_type)
-        var vehicle_no = document.getElementById('vehicle_no').value
-        console.log(vehicle_no)
-        var date = document.getElementById('date').value
-        console.log(date)
-        var time = document.getElementById('time').value
-        console.log(time)
-        var entry_point = document.getElementById('entry_point').value
-        console.log(entry_point)
-        var exit_point = document.getElementById('exit_point').value
-        console.log(exit_point)
-        var amount = document.getElementById('amount').value
-        console.log(amount)
+    var entry_point = document.getElementById('entry_point').value
+    var exit_point = document.getElementById('exit_point').value
 
+    function ischecked() {
+        if(document.getElementById('amt_confirm').checked) {
+            document.getElementById('submit').removeAttribute('disabled');
+            calc_amt();
+        }
+        else {
+            document.getElementById('submit').setAttribute('disabled');
+        }
+    }
+    
+    function calc_amt() {
         switch (entry_point) {
             case 'Bannerghatta Road':
                 if (exit_point == 'Mysore Road') {
@@ -140,8 +135,8 @@
                     alert('Entry And Exit Are Same');
                 }
                 break;
-        }
-    })
+            }
+    }
 </script>
 
 </html>
