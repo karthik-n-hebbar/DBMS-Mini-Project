@@ -65,9 +65,12 @@
                 <label for="">Amount: </label>
                 <br>
                 <input type="number" name="amount" id="amount" class="io3">
-                <input type="checkbox" name="amt_confirm" id="amt_confirm" onclick="ischecked()">
+                <input type="button" id="amt_confirm" onclick="hey()">hey
+                    <!-- <input name="amt_confirm" id="amt_confirm" onclick="hey()"> -->
+
+                </button>
                 <br><br>
-                <input type="submit" value="SUBMIT" id="submit" disabled>
+                <input type="submit" value="SUBMIT" id="submit">
             </form>
         </div>
     </div>
@@ -88,20 +91,15 @@
     document.getElementById("time").value = timePattern;
     // document.write(timePattern);
 
-    var entry_point = document.getElementById('entry_point').value
-    var exit_point = document.getElementById('exit_point').value
-
-    function ischecked() {
-        if(document.getElementById('amt_confirm').checked) {
-            document.getElementById('submit').removeAttribute('disabled');
-            calc_amt();
-        }
-        else {
-            document.getElementById('submit').setAttribute('disabled');
-        }
+    function hey(){
+        calc_amt()
+        
     }
     
     function calc_amt() {
+        var entry_point = document.getElementById('entry_point').value
+        var exit_point = document.getElementById('exit_point').value
+        
         switch (entry_point) {
             case 'Bannerghatta Road':
                 if (exit_point == 'Mysore Road') {

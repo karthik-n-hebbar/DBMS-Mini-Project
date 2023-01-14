@@ -53,6 +53,10 @@ label {
     background-color: #fff;
     box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.3);
 }
+.amt_button{
+    color: aquamarine;
+    width: 50px;
+}
 
 #submit {
     width: 200px;
