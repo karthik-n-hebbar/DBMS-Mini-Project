@@ -26,7 +26,7 @@
                 <br>
                 <select name="vehicle_type" id="vehicle_type" class="io2" required>
                     <option value="Vehicle_type">Select Vehicle Type</option>
-                    <option value="Motorcycle">Motorcycle</option>
+                    <option value="Motorcycles">Motorcycles</option>
                     <option value="LMV">LMV</option>
                     <option value="HMV">HMV</option>
                 </select>
@@ -65,9 +65,7 @@
                 <label for="">Amount: </label>
                 <br>
                 <input type="number" name="amount" id="amount" class="io3">
-                <input type="button" id="amt_confirm" onclick="hey()">hey
-                    <!-- <input name="amt_confirm" id="amt_confirm" onclick="hey()"> -->
-
+                <input type="button" value="CALCULATE AMOUNT" id="amt_confirm" onclick="hey()">
                 </button>
                 <br><br>
                 <input type="submit" value="SUBMIT" id="submit">
@@ -92,8 +90,7 @@
     // document.write(timePattern);
 
     function hey(){
-        calc_amt()
-        
+        calc_amt()  
     }
     
     function calc_amt() {

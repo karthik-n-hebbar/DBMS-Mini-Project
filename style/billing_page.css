@@ -53,10 +53,6 @@ label {
     background-color: #fff;
     box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.3);
 }
-.amt_button{
-    color: aquamarine;
-    width: 50px;
-}
 
 #submit {
     width: 200px;
@@ -69,6 +65,12 @@ label {
     cursor: pointer;
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: 1px 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+#amt_confirm {
+    width: 100px;
+    height: 30px;
+    font-size: 9px;
 }
 
 input#submit:hover {
