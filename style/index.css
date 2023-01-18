@@ -34,6 +34,7 @@ body {
 
 .logo {
     width: 200px;
+    height: 150px;
     cursor: pointer;
 }
 .navbar ul li {
