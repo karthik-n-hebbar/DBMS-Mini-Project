@@ -65,6 +65,16 @@ body {
     width: 100%;
 }
 
+.content {
+    width:100vw;
+    height: 100vh;
+}
+
+#curve_chart {
+    width: 900px; 
+    height: 400px;
+}
+
 footer {
     background: rgb(35, 35, 35);
     color: white;
