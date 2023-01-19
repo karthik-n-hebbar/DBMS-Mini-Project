@@ -90,5 +90,4 @@ $ex = mysqli_query($con, "select * from entry_and_exit_point");
     </div>
 </body>
 <script src="/javascript/billing_page.js"></script>
-
 </html>

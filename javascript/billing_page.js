@@ -29,7 +29,11 @@ function calc_amt() {
             }
             else if (exit_point == 'Kanakpura Road') {
                 document.getElementById("amount").value = 35;
-            } else {
+            }
+            else if (exit_point == 'Electronic City') {
+                document.getElementById("amount").value = 20;
+            }
+            else {
                 alert('Entry And Exit Are Same');
             }
             break;
@@ -40,7 +44,11 @@ function calc_amt() {
             }
             else if (exit_point == 'Bannerghatta Road') {
                 document.getElementById("amount").value = 35;
-            } else {
+            }
+            else if (exit_point == 'Electronic City') {
+                document.getElementById("amount").value = 40;
+            }
+            else {
                 alert('Entry And Exit Are Same');
             }
             break;
@@ -51,7 +59,25 @@ function calc_amt() {
             }
             else if (exit_point == 'Bannerghatta Road') {
                 document.getElementById("amount").value = 60;
-            } else {
+            }
+            else if (exit_point == 'Electronic City') {
+                document.getElementById("amount").value = 70;
+            }
+            else {
+                alert('Entry And Exit Are Same');
+            }
+            break;
+        case 'Electronic City':
+            if (exit_point == 'Kanakpura Road') {
+                document.getElementById("amount").value = 40;
+            }
+            else if (exit_point == 'Bannerghatta Road') {
+                document.getElementById("amount").value = 20;
+            }
+            else if (exit_point == 'Mysore Road') {
+                document.getElementById("amount").value = 70;
+            }
+            else {
                 alert('Entry And Exit Are Same');
             }
             break;
