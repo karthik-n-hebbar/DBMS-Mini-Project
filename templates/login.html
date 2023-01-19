@@ -12,7 +12,6 @@
         @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald:wght@200&family=Roboto:wght@100&family=Ubuntu:wght@300&display=swap');
     </style>
 </head>
-
 <body>
     <div class="banner">
         <div class="navbar">
@@ -37,7 +36,7 @@
                     <span></span>
                     <label for="text_field">Password</label>
                 </div>
-                <a href="/templates/billing_page.html">
+                <a href="/templates/billing_page.php">
                     <button type="submit" onclick="auth()">LOGIN</button>
                 </a>
             </form>
@@ -49,7 +48,7 @@
         var userid = document.getElementById("userid").value;
         var password = document.getElementById("password").value;
         if(userid=="admin" && password=="admin123") {
-            window.location.assign("billing_page.html");
+            window.location.assign("billing_page.php");
             alert('LOGIN SUCCESSFULL...!');
         }
         else {
