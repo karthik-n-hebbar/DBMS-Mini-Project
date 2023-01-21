@@ -8,6 +8,10 @@ header img {
     margin-left: 100px;
 }
 
+img#logo {
+    cursor: pointer;
+}
+
 body {
     background: url("/media/billing_page_bg.jpg");
    color: white; 
@@ -88,11 +92,6 @@ input#submit:hover {
     border-color: #e3e6e8;
     transition: 0.25s;
 }
-/* input#reset:hover {
-    background-color: white;
-    border-color: #e3e6e8;
-    transition: 0.25s;
-} */
 
 .io2 {
     height: 30px;

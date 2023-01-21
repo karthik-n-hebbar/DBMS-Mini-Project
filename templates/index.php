@@ -25,7 +25,7 @@ $con = mysqli_connect("localhost", "root", "", "tollease");
       </ul>
     </div>
     <div class="content">
-        <div id="curve_chart" style="width: 900px; height: 500px; margin: 0 0 0 300px;"></div>
+        <div id="curve_chart" style="width: 1000px; height: 500px; margin: 0 0 0 300px;"></div>
     </div>
   </div>
   <footer>

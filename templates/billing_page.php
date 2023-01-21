@@ -18,7 +18,7 @@ $ex = mysqli_query($con, "select * from entry_and_exit_point");
 
 <body>
     <header>
-        <img src="/media/TollEase-1.png" alt="">
+        <img id="logo" src="/media/TollEase-1.png" alt="" onclick="home()">
     </header>
     <div class="main">
         <div class="billing">

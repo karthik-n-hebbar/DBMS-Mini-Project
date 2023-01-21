@@ -1,3 +1,7 @@
+function home() {
+    window.location.assign("index.php");
+}
+
 
 var date = new Date();
 var year = date.getFullYear();
