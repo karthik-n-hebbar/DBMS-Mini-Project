@@ -56,7 +56,7 @@ $con = mysqli_connect("localhost", "root", "", "tollease");
 
     var options = {
       title: 'Number of Vehicles in a month',
-      curveType: 'function',
+      curveType: 'none',
       legend: {
         position: 'bottom'
       }

@@ -6,9 +6,6 @@
 header img {
     width: 240px;
     margin-left: 100px;
-}
-
-img#logo {
     cursor: pointer;
 }
 
