@@ -70,6 +70,24 @@ body {
     height: 75vh;
 }
 
+.graph_option {
+    color: white;
+    background-color:rgba(255, 255, 255, 0.401);
+    width: 265px;
+    height: 35px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: -20px 0 0 0;
+    position: absolute;
+    right: 135px;
+}
+
+.graph_type {
+    margin: 7px;
+}
+
 #curve_chart {
     width: 900px; 
     height: 400px;
