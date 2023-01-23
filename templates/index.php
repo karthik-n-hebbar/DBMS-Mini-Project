@@ -25,7 +25,15 @@ $con = mysqli_connect("localhost", "root", "", "tollease");
       </ul>
     </div>
     <div class="content">
-        <div id="curve_chart" style="width: 1000px; height: 500px; margin: 0 0 0 300px;"></div>
+      <div class="graph_option">
+        <input name="graph_type" class="graph_type" value="hourly" id="hourly" type="radio" checked>
+        <label for="hourly">Hourly</label>
+        <input name="graph_type" class="graph_type" value="one_day" id="one_day" type="radio">
+        <label for="hourly">One Day</label>
+        <input name="graph_type" class="graph_type" value="one_week" id="one_week" type="radio">
+        <label for="hourly">One Week</label>
+      </div>
+      <div id="curve_chart" style="width: 1000px; height: 500px; margin: 0 0 0 300px;"></div>
     </div>
   </div>
   <footer>
@@ -67,5 +75,4 @@ $con = mysqli_connect("localhost", "root", "", "tollease");
     chart.draw(data, options);
   }
 </script>
-
 </html>
