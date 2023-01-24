@@ -1,6 +1,8 @@
 <?php
-$con1 = mysqli_connect("localhost", "root", "", "tollease");
+$con = mysqli_connect("localhost", "root", "", "tollease");
+$conn = mysqli_connect("localhost", "root", "", "tollease");
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,10 +34,10 @@ $con1 = mysqli_connect("localhost", "root", "", "tollease");
         <input name="graph_type" class="graph_type" value="one_day" id="one_day" type="radio" onclick="day()">
         <label for="hourly">One Day</label>
         <input name="graph_type" class="graph_type" value="one_week" id="one_week" type="radio" onclick="week()">
-        <label for="hourly">One Week</label>
+        <label for="hourly">One Month</label>
       </div>
-      <div id="curve_chart1"></div>
-      <div id="chart_div"></div>
+      <div id="curve_chart" class="curve_chart"></div>
+      <div id="chart_div" class="chart_div"></div>
     </div>
   </div>
   <footer>
@@ -49,14 +51,14 @@ $con1 = mysqli_connect("localhost", "root", "", "tollease");
   google.charts.load('current', {
     'packages': ['corechart']
   });
-  google.charts.setOnLoadCallback(drawChart1);
+  google.charts.setOnLoadCallback(drawChart);
 
-  function drawChart1() {
+  function drawChart() {
     var data = google.visualization.arrayToDataTable([
       ['date', 'total_vehicle'],
       <?php
       $sql = "select * from vehicles_by_date";
-      $fire = mysqli_query($con1, $sql);
+      $fire = mysqli_query($con, $sql);
       while ($result = mysqli_fetch_assoc($fire)) {
         echo "['" . $result['date'] . "'," . $result['total_vehicle'] . "],";
       }
@@ -72,100 +74,77 @@ $con1 = mysqli_connect("localhost", "root", "", "tollease");
       }
     };
 
-    var chart1 = new google.visualization.LineChart(document.getElementById('curve_chart1'));
-    chart1.draw(data, options);
-  }
-
-  function hour() {
-    console.log("Hourly Graph");
-  }
-
-  function day() {
-    console.log("One Day Graph");
-
-  }
-
-  function week() {
-    console.log("One Week Graph");
+    var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+    chart.draw(data, options);
   }
 </script>
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+  google.charts.load('current', {
+    'packages': ['corechart']
+  });
+  google.charts.setOnLoadCallback(drawChart);
+
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      ['time', 'total_vehicle'],
+      <?php
+      $sql = "SELECT time, total_vehicle FROM vehicles_in_peak_hours";
+      $fire = mysqli_query($conn, $sql);
+      while ($result = mysqli_fetch_assoc($fire)) {
+        echo "['" . $result['time'] . "'," . $result['total_vehicle'] . "],";
+      }
+      ?>
+
+    ]);
+
+    var options = {
+      title: 'Number Of Vehicles During Peak Hours (5PM Onwards)',
+      curveType: 'none',
+      legend: {
+        position: 'bottom'
+      }
+    };
+
+    var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
+  }
+</script>
+
 <script>
-  google.charts.load('current', {packages: ['corechart', 'bar']});
-  google.charts.setOnLoadCallback(drawBasic);
+  function hour() {
+    console.log("Hourly Graph");
+    document.getElementById("chart_div").style.display = "block";
+    document.getElementById("curve_chart").style.display = "none";
+  }
 
-  function drawBasic() {
+  function day() {
+    console.log("One Day Graph");
+    document.getElementById("chart_div").style.display = "none";
+    document.getElementById("curve_chart").style.display = "none";
+  }
 
-      var data = new google.visualization.DataTable();
-      data.addColumn('timeofday', 'Time of Day');
-      data.addColumn('number', 'Motivation Level');
-
-      data.addRows([
-        [{v: [8, 0, 0], f: '8 am'}, 1],
-        [{v: [9, 0, 0], f: '9 am'}, 2],
-        [{v: [10, 0, 0], f:'10 am'}, 3],
-        [{v: [11, 0, 0], f: '11 am'}, 4],
-        [{v: [12, 0, 0], f: '12 pm'}, 5],
-        [{v: [13, 0, 0], f: '1 pm'}, 6],
-        [{v: [14, 0, 0], f: '2 pm'}, 7],
-        [{v: [15, 0, 0], f: '3 pm'}, 8],
-        [{v: [16, 0, 0], f: '4 pm'}, 9],
-        [{v: [17, 0, 0], f: '5 pm'}, 10],
-      ]);
-
-      var options = {
-        title: 'Motivation Level Throughout the Day',
-        hAxis: {
-          title: 'Time of Day',
-          format: 'h:mm a',
-          viewWindow: {
-            min: [7, 30, 0],
-            max: [17, 30, 0]
-          }
-        },
-        vAxis: {
-          title: 'Rating (scale of 1-10)'
-        }
-      };
-
-      var chart = new google.visualization.ColumnChart(
-        document.getElementById('chart_div'));
-
-      chart.draw(data, options);
+  function week() {
+    console.log("One Week Graph");
+    document.getElementById("curve_chart").style.display = "block";
+    document.getElementById("chart_div").style.display = "none";
   }
 </script>
 <style>
-  .graph_option {
-    color: white;
-    background-color: rgba(255, 255, 255, 0.401);
-    width: 265px;
-    height: 35px;
-    border-radius: 10px;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    margin: -45px 0 0 0;
+  #curve_chart {
+    width: 1000px;
+    height: 500px;
+    margin: 0 0 0 300px;
     position: absolute;
-    right: 135px;
-  }
-  .graph_type {
-    margin: 7px;
   }
 
-  #curve_chart1 {
-    width: 1000px; 
-    height: 500px; 
-    margin: 0 0 0 300px;
-    position: absolute;
-  }
   #chart_div {
-    width: 1000px; 
-    height: 500px; 
+    width: 1000px;
+    height: 500px;
     margin: 0 0 0 300px;
     position: absolute;
-    display: none;
+    /* display: none; */
   }
 </style>
-
 </html>
