@@ -1,6 +1,7 @@
 <?php
 $con = mysqli_connect("localhost", "root", "", "tollease");
 $conn = mysqli_connect("localhost", "root", "", "tollease");
+$connn = mysqli_connect("localhost", "root", "", "tollease");
 ?>
 
 <!DOCTYPE html>
@@ -36,8 +37,9 @@ $conn = mysqli_connect("localhost", "root", "", "tollease");
         <input name="graph_type" class="graph_type" value="one_week" id="one_week" type="radio" onclick="week()">
         <label for="hourly">One Month</label>
       </div>
-      <div id="curve_chart" class="curve_chart"></div>
-      <div id="chart_div" class="chart_div"></div>
+      <div id="curve_chart3" class="curve_chart3"></div>
+      <div id="curve_chart2" class="curve_chart2"></div>
+      <div id="curve_chart1" class="curve_chart1"></div>
     </div>
   </div>
   <footer>
@@ -67,14 +69,14 @@ $conn = mysqli_connect("localhost", "root", "", "tollease");
     ]);
 
     var options = {
-      title: 'Number of Vehicles in a month',
+      title: 'Number Of Vehicles In A Month',
       curveType: 'none',
       legend: {
         position: 'bottom'
       }
     };
 
-    var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+    var chart = new google.visualization.LineChart(document.getElementById('curve_chart3'));
     chart.draw(data, options);
   }
 </script>
@@ -107,7 +109,40 @@ $conn = mysqli_connect("localhost", "root", "", "tollease");
       }
     };
 
-    var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+    var chart = new google.visualization.LineChart(document.getElementById('curve_chart1'));
+    chart.draw(data, options);
+  }
+</script>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+  google.charts.load('current', {
+    'packages': ['corechart']
+  });
+  google.charts.setOnLoadCallback(drawChart);
+
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      ['date', 'total_vehicle'],
+      <?php
+      $sql2 = "SELECT time, total_vehicle FROM vehicle_in_a_day";
+      $fire2 = mysqli_query($connn, $sql2);
+      while ($result = mysqli_fetch_assoc($fire2)) {
+        echo "['" . $result['time'] . "'," . $result['total_vehicle'] . "],";
+      }
+      ?>
+
+    ]);
+
+    var options = {
+      title: 'Number Of Vehicles In A Day',
+      curveType: 'none',
+      legend: {
+        position: 'bottom'
+      }
+    };
+
+    var chart = new google.visualization.LineChart(document.getElementById('curve_chart2'));
     chart.draw(data, options);
   }
 </script>
@@ -115,36 +150,45 @@ $conn = mysqli_connect("localhost", "root", "", "tollease");
 <script>
   function hour() {
     console.log("Hourly Graph");
-    document.getElementById("chart_div").style.display = "block";
-    document.getElementById("curve_chart").style.display = "none";
+    document.getElementById("curve_chart1").style.display = "block";
+    document.getElementById("curve_chart2").style.display = "none";
+    document.getElementById("curve_chart3").style.display = "none";
   }
 
   function day() {
     console.log("One Day Graph");
-    document.getElementById("chart_div").style.display = "none";
-    document.getElementById("curve_chart").style.display = "none";
+    document.getElementById("curve_chart1").style.display = "none";
+    document.getElementById("curve_chart2").style.display = "block";
+    document.getElementById("curve_chart3").style.display = "none";
+
   }
 
   function week() {
     console.log("One Week Graph");
-    document.getElementById("curve_chart").style.display = "block";
-    document.getElementById("chart_div").style.display = "none";
+    document.getElementById("curve_chart1").style.display = "none";
+    document.getElementById("curve_chart2").style.display = "none";
+    document.getElementById("curve_chart3").style.display = "block";
   }
 </script>
 <style>
-  #curve_chart {
+  #curve_chart3 {
     width: 1000px;
     height: 500px;
     margin: 0 0 0 300px;
     position: absolute;
   }
 
-  #chart_div {
+  #curve_chart2 {
     width: 1000px;
     height: 500px;
     margin: 0 0 0 300px;
     position: absolute;
-    /* display: none; */
+  }
+  #curve_chart1 {
+    width: 1000px;
+    height: 500px;
+    margin: 0 0 0 300px;
+    position: absolute;
   }
 </style>
 </html>
