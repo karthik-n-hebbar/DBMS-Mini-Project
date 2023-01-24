@@ -59,7 +59,7 @@ $connn = mysqli_connect("localhost", "root", "", "tollease");
     var data = google.visualization.arrayToDataTable([
       ['date', 'total_vehicle'],
       <?php
-      $sql = "select * from vehicles_by_date";
+      $sql = "select * from vehicle_in_a_month";
       $fire = mysqli_query($con, $sql);
       while ($result = mysqli_fetch_assoc($fire)) {
         echo "['" . $result['date'] . "'," . $result['total_vehicle'] . "],";
