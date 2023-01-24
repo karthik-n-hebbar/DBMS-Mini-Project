@@ -1,8 +1,8 @@
 <?php
 $con = mysqli_connect("localhost", "root", "", "tollease");
 $s = mysqli_query($con, "select * from vehicle_type");
-$en = mysqli_query($con, "select * from entry_and_exit_point");
-$ex = mysqli_query($con, "select * from entry_and_exit_point");
+$en = mysqli_query($con, "select * from entry_point");
+$ex = mysqli_query($con, "select * from exit_point");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,7 +56,7 @@ $ex = mysqli_query($con, "select * from entry_and_exit_point");
                     <?php
                     while ($enp = mysqli_fetch_array($en)) {
                     ?>
-                        <option><?php echo $enp['entry_exit_point']; ?></option>
+                        <option><?php echo $enp['entry_point_name']; ?></option>
                     <?php
                     }
                     ?>
@@ -69,7 +69,7 @@ $ex = mysqli_query($con, "select * from entry_and_exit_point");
                     <?php
                     while ($ext = mysqli_fetch_array($ex)) {
                     ?>
-                        <option><?php echo $ext['entry_exit_point']; ?></option>
+                        <option><?php echo $ext['exit_point_name']; ?></option>
                     <?php
                     }
                     ?>
